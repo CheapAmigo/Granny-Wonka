@@ -1,0 +1,26 @@
+<header>
+    <h1>Granny Wonka</h1>
+
+    <!-- Десктоп-меню -->
+    <nav class="desktop-nav">
+        <ul>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#products">Товары</a></li>
+            <li><a href="#order">Заказать</a></li>
+        </ul>
+    </nav>
+
+    <!-- Гамбургер -->
+    <div class="hamburger" onclick="toggleMobileMenu()">
+        <img src="svg_images\hamburger.svg" alt="Меню">
+    </div>
+
+    <!-- Мобильное меню -->
+    <nav class="mobile-nav" id="mobileMenu">
+        <ul>
+            <li><a href="#about" onclick="toggleMobileMenu()">О нас</a></li>
+            <li><a href="#products" onclick="toggleMobileMenu()">Товары</a></li>
+            <li><a href="#order" onclick="toggleMobileMenu()">Заказать</a></li>
+        </ul>
+    </nav>
+</header>
