@@ -1,0 +1,611 @@
+/* Общие стили */
+body {
+    padding-top: 100px; /* Примерный размер шапки */
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f4e8; /* Светлый теплый фон */
+    color: #4a4a4a; /* Темно-серый текст для контраста */
+    margin: 0;
+}
+
+/* Шапка */
+header {
+    position: fixed; /* Фиксация */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff7f50; /* Теплый оранжевый */
+    color: white;
+    padding: 20px 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* Навигация */
+nav {
+    margin-right: 5%;
+}
+
+nav ul {
+    list-style: none; /* Убираем маркеры списка */
+    display: flex;
+    gap: 30px; /* Расстояние между пунктами */
+    margin: 0;
+    padding: 0;
+}
+
+/* Навигация */
+nav a {
+    color: white;
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: #e05624; /* Немного ярче оранжевый */
+    padding: 5px 10px; /* Небольшая подложка для эффекта */
+    border-radius: 5px; /* Скругленные углы */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход для фона и текста */
+}
+
+nav a:hover {
+    color: #ffe4db; /* Цвет текста при наведении */
+}
+
+/* Гамбургер и адаптивная навигация */
+.hamburger {
+    margin-right: 15%;
+    display: none; /* Скрыть гамбургер по умолчанию */
+    cursor: pointer;
+}
+
+.hamburger img {
+    width: 30px;
+    height: 50px;
+}
+
+/* Скрыто по умолчанию */
+.mobile-nav {
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    background-color: #ff7f50;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end; /* Выравнивание ссылок */
+}
+
+.mobile-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: #e05624;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: right; /* Выравнивание текста */
+    width: 100%;
+}
+
+.mobile-nav a:hover {
+    color: #ffe4db;
+}
+
+.mobile-nav.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Медиа-запрос для переключения */
+@media (max-width: 700px) {
+
+    .hamburger {
+        display: block; /* Показываем гамбургер на мобильных устройствах */
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+}
+
+/* Стили для секции О нас */
+#about {
+    background-color: #ffebcd; /* Светлый кремовый фон */
+    color: #4a4a4a; /* Темно-серый текст для контраста */
+    padding: 5px 5px; /* Отступы внутри секции */
+    border-radius: 10px; /* Скругленные углы для секции */
+    margin: 20px; /* Отступ сверху и снизу */
+    text-align: center; /* Выравнивание текста по центру */
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2); /* Легкая тень для выделения */
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cookie-icon {
+    width: 40px;
+    color: #555;
+    height: auto;
+}
+
+.cookie-icon.right {
+    transform: scaleX(-1); /* Зеркальное отражение по горизонтали */
+}
+
+/* Заголовок секции */
+#about h2 {
+    font-size: 2rem; /* Размер шрифта */
+    color: #ff7f50; /* Оранжевый цвет для заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Текст в секции */
+#about p {
+    font-size: 1.1rem; /* Увеличенный шрифт для текста */
+    line-height: 1.6; /* Интерлиньяж для улучшения читаемости */
+    max-width: 800px; /* Максимальная ширина для текста */
+    margin: 0 auto; /* Центрирование текста по горизонтали */
+    color: #555; /* Темный серый цвет для текста */
+    margin-bottom: 15px;
+    padding: 0 10px;
+}
+
+/* Секция "Преимущества" */
+#benefits {
+    padding: 15px 15px; /* Отступы внутри секции */
+    border-radius: 10px; /* Скругленные углы для секции */
+    margin: 20px; /* Отступ сверху и снизу */
+    background-color: #ffebcd;
+    text-align: center;
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2); /* Легкая тень для выделения */
+}
+
+.benefits-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.star-icon {
+    width: 40px;
+    color: #555;
+    height: auto;
+}
+
+.star-icon.right {
+    transform: scaleX(-1); /* Зеркальное отражение по горизонтали */
+}
+
+.star-icon.mobile-only{
+    width: 40px;
+    color: #555;
+    height: auto;
+    display: none;
+}
+
+@media (max-width: 430px) {
+    .star-icon.left,
+    .star-icon.right {
+        display: none;
+    }
+
+    .star-icon.mobile-only {
+        display: block;
+        margin-bottom: 0px;
+    }
+
+    .benefits-header {
+        flex-direction: column;
+    }
+
+    .benefits-header h2 {
+        margin-top: 5px; /* Уменьшенный отступ сверху */
+    }
+}
+
+#benefits h2 {
+    
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    color: #ffcd62;
+}
+
+
+.benefit-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: stretch; /* ключевой момент */
+}
+
+.benefit-item {
+    background-color: #ffcd62;
+    border: 2px solid #ffae00;
+    border-radius: 20px;
+    width: 280px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.2s ease;
+    margin-bottom: 30px;
+    flex: 1 1 auto; /* позволяет растягиваться */
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 5px;
+}
+
+.benefit-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #e94e77;
+}
+
+.benefit-item p {
+    font-size: 1rem;
+    color: #4a4a4a; /* Темно-серый текст для контраста */
+    line-height: 1.4;
+}
+
+/* Секция "Товары" */
+#products {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    background-color: #ffebcd; /* Светлый кремовый фон */
+    text-align: center;
+    margin: 20px; /* Отступ сверху и снизу */
+    border-radius: 10px; /* Скругленные углы для секции */
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2); /* Легкая тень для выделения */
+}
+
+.products-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.pistol-icon {
+    width: 40px;
+    color: #555;
+    height: auto;
+}
+
+.pistol-icon.right {
+    transform: scaleX(-1); /* Зеркальное отражение по горизонтали */
+}
+
+#products h2 {
+    font-size: 2rem;
+    color: #e94e77; /* Яркий красный для заголовка */
+    margin-bottom: 30px;
+}
+
+.product-gallery {
+    display: grid;
+    padding-bottom: 1%;
+    grid-template-columns: repeat(3, 1fr); /* Стандартно 3 карточки в ряду */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* Для экранов шириной 768px (планшеты) и меньше: 2 карточки в ряду */
+@media (max-width: 768px) {
+    .product-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряду */
+    }
+}
+
+/* Для экранов шириной 480px (мобилки) и меньше: 1 карточка в ряду */
+@media (max-width: 480px) {
+    .product-gallery {
+        grid-template-columns: 1fr; /* 1 карточка в ряду */
+    }
+}
+
+/* Каждая карточка товара */
+.product-item {
+    background-color: #ffcc99;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: 200px; /* Фиксированная высота для изображений */
+    object-fit: cover; /* Обрезка изображений, чтобы они занимали все пространство */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-item p {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+/* Модальное окно */
+.modal {
+    position: fixed; /* Фиксированное положение */
+    top: 50%; /* Центрирование по вертикали */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* Смещаем окно на 50% своей ширины и высоты */
+    width: 90%; /* Ширина 90% от экрана */
+    max-width: 800px; /* Максимальная ширина */
+    z-index: 1050; /* Убедимся, что модальное окно всегда поверх всех остальных элементов */
+    display: none; /* Изначально скрыто */
+    padding: 10px;
+}
+
+/* Содержимое модального окна */
+.modal-content {
+    background-color: #ffebcd;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    border: 3px solid #888;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Изменим на flex-start для выравнивания по верхнему краю */
+    flex-direction: row; /* Элементы расположены горизонтально по умолчанию */
+}
+
+/* Кнопка закрытия */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #e94e77; /* Красный для кнопки закрытия */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Основная часть модального окна */
+#modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#modal-body .slider {
+    flex: 1;
+    position: relative;
+}
+
+#modal-body .slider img {
+    width: 100%;
+    height: 400px; /* Устанавливаем одинаковую высоту для всех изображений */
+    object-fit: cover; /* Обеспечивает сохранение пропорций и обрезку изображений */
+    border-radius: 8px;
+}
+
+#modal-body .slider .prev,
+#modal-body .slider .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#modal-body .slider .prev {
+    left: 10px;
+}
+
+#modal-body .slider .next {
+    right: 10px;
+}
+
+#modal-info {
+    flex: 1;
+    padding-left: 20px;
+}
+
+#modal-title {
+    font-size: 1.5rem;
+    color: #e94e77; /* Красный для названия товара */
+    margin-bottom: 10px;
+}
+
+#modal-description {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+#modal-price {
+    font-size: 1.2rem;
+    color: #e94e77; /* Ярко-красный для цены */
+    font-weight: bold;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 10px;
+    }
+
+    .close {
+        font-size: 24px;
+        top: 5px;
+        right: 15px;
+    }
+
+    #modal-body .slider img {
+        height: 300px; /* Меньше высота изображений на мобильных устройствах */
+    }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 600px) {
+    .modal-content {
+        flex-direction: column; /* Изменим на вертикальное расположение */
+        align-items: center; /* Центрируем элементы по горизонтали */
+    }
+
+    #modal-body {
+        flex-direction: column; /* Структура слайдера и информации будет вертикальной */
+        align-items: center; /* Центрируем содержимое */
+    }
+
+    #modal-body .slider {
+        width: 100%; /* Ширина слайдера на мобильных устройствах */
+        order: 1; /* Слайдер идет первым (сверху) */
+    }
+
+    #modal-info {
+        width: 100%; /* Ширина информации 100% */
+        padding-left: 0; /* Убираем отступ для мобильных устройств */
+        order: 2; /* Текст идет после слайдера */
+        margin-top: 15px; /* Отступ сверху для информации */
+    }
+
+    #modal-title {
+        font-size: 1.3rem; /* Уменьшаем размер заголовка */
+        text-align: center; /* Центрируем заголовок */
+    }
+
+    #modal-description {
+        font-size: 1rem; /* Уменьшаем размер описания */
+        text-align: center; /* Центрируем описание */
+    }
+
+    #modal-price {
+        font-size: 1.1rem; /* Уменьшаем размер цены */
+        text-align: center; /* Центрируем цену */
+    }
+
+    /* Перемещение кнопки закрытия в правый верхний угол на мобильных устройствах */
+    .close {
+        top: 5px;
+        right: 5px;
+        position: absolute; /* Меняем позиционирование на абсолютное */
+        font-size: 32px; /* Увеличиваем размер крестика */
+        color: #e94e77; /* Делаем цвет более заметным */
+        z-index: 1001; /* Повышаем приоритет отображения, чтобы она не перекрывалась */
+    }
+
+    /* Дополнительные стили для видимости крестика */
+    .close:hover {
+        color: #fff; /* Изменение цвета на белый при наведении */
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+
+/* Заказ */
+#order {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: center; /* Центрирование по вертикали */
+    text-align: center; /* Текст по центру */
+    padding: 20px;
+    background-color: #ffebcd; /* Легкий фон для секции */
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень для улучшения визуального восприятия */
+    max-width: 600px;
+    margin: 0 auto; /* Центрирование секции на странице */
+    margin-bottom: 30px;
+}
+
+#order h2 {
+    font-size: 2rem;
+    color: #e94e77; /* Красный цвет для заголовка */
+    margin-bottom: 20px;
+}
+
+#order p {
+    font-size: 1.1rem;
+    color: #4a4a4a; /* Темно-серый цвет для текста */
+    margin: 10px 0;
+}
+
+#order a {
+    color: #e94e77;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#order a:hover {
+    color: #ff7f50; /* Светло-оранжевый при наведении */
+}
+

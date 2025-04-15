@@ -1,0 +1,47 @@
+<section id="products">
+    <div class="products-header">
+        <img src="svg_images/products_pistol.svg" alt="Products Pistol" class="pistol-icon left">
+        <h2>Товары</h2>
+        <img src="svg_images/products_pistol.svg" alt="Products Pistol" class="pistol-icon right">
+    </div>
+    <div class="product-gallery">
+        <div class="product-item" onclick="openModal('egg-on-stick')">
+            <img src="шоколадки/egg-on-stick1.jpg" alt="Яйцо на палочке">
+            <p>Яйцо на палочке - 89₽</p>
+        </div>
+        <div class="product-item" onclick="openModal('sweet-box')">
+            <img src="шоколадки/sweet-box.jpg" alt="Сладкая коробочка">
+            <p>Сладкая коробочка - 399₽</p>
+        </div>
+        <div class="product-item" onclick="openModal('chocolate-set')">
+            <img src="шоколадки/chocolate-set1.jpg" alt="Шоколадное яйцо 'набор'">
+            <p>Шоколадное яйцо "набор" - 239₽</p>
+        </div>
+        <div class="product-item" onclick="openModal('Fruit-chips')">
+            <img src="шоколадки\chips.jpg" alt="Фруктовые чипсы'">
+            <p>Фруктовые чипсы - 159₽</p>
+        </div>
+    </div>
+</section>
+
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-body">
+            <div class="slider">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                <div class="modal-image-container">
+                    <!-- Место для изображений, которые будут вставляться динамически -->
+                    <img id="modal-image" class="modal-image" />
+                </div>
+                <button class="next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+            <div id="modal-info">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <p id="modal-price"></p>
+            </div>
+        </div>
+    </div>
+</div>
